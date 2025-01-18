@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<Windows.h>
 
 using namespace std;
@@ -10,7 +10,7 @@ int main()
 	cout.setf(ios::boolalpha);
 
 	/*cout << "Hello C++" << endl;
-	cout << "Ìåíå çâàòè Ñåðã³é" << endl;
+	cout << "ÐœÐµÐ½Ðµ Ð·Ð²Ð°Ñ‚Ð¸ Ð¡ÐµÑ€Ð³Ñ–Ð¹" << endl;
 	cout << 'a' << endl;
 	cout << 123 << endl;
 	cout << true << endl;*/
@@ -49,7 +49,7 @@ int main()
 	cout << "b = ";
 	cin >> b;
 	int s = a * b;
-	cout << "Ïëîùà, ïðè à = " << a << ", b = " << b << " äîð³âíþº " << s << " êâ. îä" << endl;*/
+	cout << "ÐŸÐ»Ð¾Ñ‰Ð°, Ð¿Ñ€Ð¸ Ð° = " << a << ", b = " << b << " Ð´Ð¾Ñ€Ñ–Ð²Ð½ÑŽÑ” " << s << " ÐºÐ². Ð¾Ð´" << endl;*/
 
 
 	cout << 150 % 100 << endl;
