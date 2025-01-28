@@ -1,7 +1,19 @@
 ﻿#include<iostream>
 #include<Windows.h>
+#include<iomanip>
 
 using namespace std;
+
+enum Color
+{
+	Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8,
+	LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15
+};
+
+void SetColor(int text, int background)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
+}
 
 
 int main()
@@ -9,6 +21,78 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
+
+	/// 28.01.2025 //////
+
+	/*for (int i = 5; i >= 0; i--)
+	{
+		cout << i << " ";
+	}*/
+	
+	/*Дано вещественное число — цена 1 кг конфет. Вывести стоимость 0.1,
+		0.2, ..., 1 кг конфет.*/
+
+
+	/*float price;
+	cin >> price;
+	for (int i = 2; i <= 10; i+=2)
+	{
+		cout << 1+i/10.f << " kg - " << (1+i/10.) * price << " grn" << endl;
+	}*/
+
+
+	/*Дано вещественное число — цена 1 кг конфет.Вывести стоимость 1.2,
+		1.4, ..., 2 кг конфет.*/
+
+
+	/*Дано целое число N(> 0).Найти квадрат данного числа, используя для
+		его вычисления следующую формулу :
+		N2 = 1 + 3 + 5 + ... + (2·N – 1).*/
+
+	/*int n;
+	cin >> n; 
+	int sum = 0;
+	for (size_t i = 1; i <= 2 * n - 1; i+=2)
+	{
+		sum += i;
+	}
+	cout << sum << endl;*/
+
+
+
+	/*Дано вещественное число A и целое число N(> 0).Используя один
+		цикл, вывести все целые степени числа A от 1 до N.*/
+
+	//int n;
+	//cin >> n;
+	//float a;
+	//cin >> a;
+	//float f = 1, sum = 1;
+
+	//for (size_t i = 0; i < n; i++)
+	//{
+	//	
+	//	f *= a;
+	//	sum += f;
+	//	//cout << i + 1 << " " << f << endl;
+	//}
+	//cout << sum << endl;
+
+
+	SetColor(White, Black);
+	cout << " -------- 1 ---------" << endl;
+	cout << " Mo Tu We Th Fr";
+	SetColor(LightRed, Black);
+	cout << " Sa Su" << endl;
+	for (size_t i = 1; i <= 30; i++)
+	{
+		SetColor((i % 7 == 0 || (i + 1) % 7 == 0) ? LightRed : White, Black);
+		cout << setw(3) << i;
+		if (i % 7 == 0)
+			cout << endl;
+	}
+	cout << endl;
+
 
 
 	/// 21.01.2025 //////
@@ -31,7 +115,7 @@ int main()
 		}
 	}*/
 
-	double a = 0, b;
+	/*double a = 0, b;
 	char op;
 
 	cout << "a=";
@@ -66,7 +150,7 @@ int main()
 	}
 	else {
 		cout << "error404!" << endl;
-	}
+	}*/
 
 
 
