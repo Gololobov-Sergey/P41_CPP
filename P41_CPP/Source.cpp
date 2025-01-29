@@ -1,7 +1,19 @@
 ﻿#include<iostream>
 #include<Windows.h>
+#include<iomanip>
 
 using namespace std;
+
+enum Color
+{
+	Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8,
+	LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15
+};
+
+void SetColor(int text, int background)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
+}
 
 
 int main()
@@ -10,102 +22,78 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
-	/// 25.01.2025 //////
+	/// 28.01.2025 //////
 
-	//typedef unsigned char UC;
-
-	//UC t;
-
-	/*for (int i = 0; i < 10; i++)
+	/*for (int i = 5; i >= 0; i--)
 	{
-		cout << "mama" << endl;
+		cout << i << " ";
+	}*/
+	
+	/*Дано вещественное число — цена 1 кг конфет. Вывести стоимость 0.1,
+		0.2, ..., 1 кг конфет.*/
+
+
+	/*float price;
+	cin >> price;
+	for (int i = 2; i <= 10; i+=2)
+	{
+		cout << 1+i/10.f << " kg - " << (1+i/10.) * price << " grn" << endl;
 	}*/
 
 
-	int b, c;
-	cin >> b;
-	cin >> c;
-	for (int i = 0; i <= c; i+=2)
+	/*Дано вещественное число — цена 1 кг конфет.Вывести стоимость 1.2,
+		1.4, ..., 2 кг конфет.*/
+
+
+	/*Дано целое число N(> 0).Найти квадрат данного числа, используя для
+		его вычисления следующую формулу :
+		N2 = 1 + 3 + 5 + ... + (2·N – 1).*/
+
+	/*int n;
+	cin >> n; 
+	int sum = 0;
+	for (size_t i = 1; i <= 2 * n - 1; i+=2)
 	{
-		cout << i << " ";
+		sum += i;
 	}
-	cout << endl;
-
-
-	/*int n, count = 0;
-	cin >> n;
-	while (n > 0)
-	{
-		count++;
-		n /= 10;
-	}
-	cout << count << endl;*/
-
-
-	/*int a, sum = 0;
-	do
-	{
-		cin >> a;
-		sum += a;
-	} while (a != 0);
 	cout << sum << endl;*/
 
 
 
+	/*Дано вещественное число A и целое число N(> 0).Используя один
+		цикл, вывести все целые степени числа A от 1 до N.*/
 
-	/*int a = 1;
-	while (a < 6)
-	{
-		cout << a++ << " ";
-	}
+	//int n;
+	//cin >> n;
+	//float a;
+	//cin >> a;
+	//float f = 1, sum = 1;
 
-	do
-	{
-		
-	} while (true);*/
-
-	//(condition) ? oper1 : oper2;
-
-	/*int a = 5, b = 4, c = 6, max;
-	if (a > b)
-	{
-		max = a;
-	}
-	else
-	{
-		max = b;
-	}
-	
-	(a > b) ? max = a : max = b;
-
-	max = (a > b) ? a : b;
-
-	max = (a > b && a > c) ? a : (b > c) ? b : c;*/
-
-
-
-	/*Дано целое число в диапазоне 100–999. Вывести строку - описание
-	  данного числа, например: 256 — «двести пятьдесят шесть», 814 — «во -
-	  семьсот четырнадцать».*/
-
-
-	//int number;
-	//cout << "100-999: ";
-	//cin >> number;
-
-	///* сотни */
-	//int h = number / 100;
-	//switch (h) {
-	//case 1: cout << "сто"; break;
-	//case 2: cout << "двести"; break;
-	//case 3: cout << "триста"; break;
-	//case 4: cout << "четыреста"; break;
-	//case 5: cout << "пятьсот"; break;
-	//case 6: cout << "шестьсот"; break;
-	//case 7: cout << "семьсот"; break;
-	//case 8: cout << "восемьсот"; break;
-	//case 9: cout << "девятьсот"; break;
+	//for (size_t i = 0; i < n; i++)
+	//{
+	//	
+	//	f *= a;
+	//	sum += f;
+	//	//cout << i + 1 << " " << f << endl;
 	//}
+	//cout << sum << endl;
+
+
+	SetColor(White, Black);
+	cout << " -------- 1 ---------" << endl;
+	cout << " Mo Tu We Th Fr";
+	SetColor(LightRed, Black);
+	cout << " Sa Su" << endl;
+	for (size_t i = 1; i <= 30; i++)
+	{
+		SetColor((i % 7 == 0 || (i + 1) % 7 == 0) ? LightRed : White, Black);
+		cout << setw(3) << i;
+		if (i % 7 == 0)
+			cout << endl;
+	}
+	cout << endl;
+
+
 
 	///* десятки и единички */
 	//int t = (number / 10) % 10;
