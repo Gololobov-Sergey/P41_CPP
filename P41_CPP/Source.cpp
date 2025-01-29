@@ -10,6 +10,158 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+	/// 25.01.2025 //////
+
+	//typedef unsigned char UC;
+
+	//UC t;
+
+	/*for (int i = 0; i < 10; i++)
+	{
+		cout << "mama" << endl;
+	}*/
+
+
+	int b, c;
+	cin >> b;
+	cin >> c;
+	for (int i = 0; i <= c; i+=2)
+	{
+		cout << i << " ";
+	}
+	cout << endl;
+
+
+	/*int n, count = 0;
+	cin >> n;
+	while (n > 0)
+	{
+		count++;
+		n /= 10;
+	}
+	cout << count << endl;*/
+
+
+	/*int a, sum = 0;
+	do
+	{
+		cin >> a;
+		sum += a;
+	} while (a != 0);
+	cout << sum << endl;*/
+
+
+
+
+	/*int a = 1;
+	while (a < 6)
+	{
+		cout << a++ << " ";
+	}
+
+	do
+	{
+		
+	} while (true);*/
+
+	//(condition) ? oper1 : oper2;
+
+	/*int a = 5, b = 4, c = 6, max;
+	if (a > b)
+	{
+		max = a;
+	}
+	else
+	{
+		max = b;
+	}
+	
+	(a > b) ? max = a : max = b;
+
+	max = (a > b) ? a : b;
+
+	max = (a > b && a > c) ? a : (b > c) ? b : c;*/
+
+
+
+	/*Дано целое число в диапазоне 100–999. Вывести строку - описание
+	  данного числа, например: 256 — «двести пятьдесят шесть», 814 — «во -
+	  семьсот четырнадцать».*/
+
+
+	//int number;
+	//cout << "100-999: ";
+	//cin >> number;
+
+	///* сотни */
+	//int h = number / 100;
+	//switch (h) {
+	//case 1: cout << "сто"; break;
+	//case 2: cout << "двести"; break;
+	//case 3: cout << "триста"; break;
+	//case 4: cout << "четыреста"; break;
+	//case 5: cout << "пятьсот"; break;
+	//case 6: cout << "шестьсот"; break;
+	//case 7: cout << "семьсот"; break;
+	//case 8: cout << "восемьсот"; break;
+	//case 9: cout << "девятьсот"; break;
+	//}
+
+	///* десятки и единички */
+	//int t = (number / 10) % 10;
+	//int u = number % 10;
+
+	//if (t == 1) {
+	//	switch (u) {
+	//	case 0: cout << " десять"; break;
+	//	case 1: cout << " одиннадцать"; break;
+	//	case 2: cout << " двенадцать"; break;
+	//	case 3: cout << " тринадцать"; break;
+	//	case 4: cout << " четырнадцать"; break;
+	//	case 5: cout << " пятнадцать"; break;
+	//	case 6: cout << " шестнадцать"; break;
+	//	case 7: cout << " семнадцать"; break;
+	//	case 8: cout << " восемнадцать"; break;
+	//	case 9: cout << " девятнадцать"; break;
+	//	}
+	//}
+	//else {
+	//	switch (t) {
+	//	case 2: cout << " двадцать"; break;
+	//	case 3: cout << " тридцать"; break;
+	//	case 4: cout << " сорок"; break;
+	//	case 5: cout << " пятьдесят"; break;
+	//	case 6: cout << " шестьдесят"; break;
+	//	case 7: cout << " семьдесят"; break;
+	//	case 8: cout << " восемьдесят"; break;
+	//	case 9: cout << " девяносто"; break;
+	//	}
+
+	//	switch (u) {
+	//	case 1: cout << " один"; break;
+	//	case 2: cout << " два"; break;
+	//	case 3: cout << " три"; break;
+	//	case 4: cout << " четыре"; break;
+	//	case 5: cout << " пять"; break;
+	//	case 6: cout << " шесть"; break;
+	//	case 7: cout << " семь"; break;
+	//	case 8: cout << " восемь"; break;
+	//	case 9: cout << " девять"; break;
+	//	}
+	//}
+	//cout << endl;
+
+
+	/*int m;
+	cin >> m;
+	switch (m)
+	{
+	case 1: case 2: case 12: cout << "Winter" << endl; break;
+	case 3: case 4: case 5:  cout << "Winter" << endl; break;
+	default:
+		break;
+	}*/
+
 
 	/// 21.01.2025 //////
 
@@ -31,7 +183,7 @@ int main()
 		}
 	}*/
 
-	double a = 0, b;
+	/*double a = 0, b;
 	char op;
 
 	cout << "a=";
@@ -41,7 +193,27 @@ int main()
 	cout << "b= ";
 	cin >> b;
 
-	if (op == '+') 
+	switch (op)
+	{
+	case '+':
+		cout << "rez = " << a + b << endl;
+		break;
+
+	case '-':
+		cout << "rez = " << a - b << endl;
+		break;
+	case '*': 
+		cout << "rez = " << a * b << endl;
+		break;
+	case '/': 
+		cout << "rez = " << a / b << endl;
+		break;
+	default:
+		cout << "error404!" << endl;
+		break;
+	}*/
+
+	/*if (op == '+') 
 	{
 		cout << "rez: " << a + b << endl;
 	}
@@ -66,7 +238,7 @@ int main()
 	}
 	else {
 		cout << "error404!" << endl;
-	}
+	}*/
 
 
 
