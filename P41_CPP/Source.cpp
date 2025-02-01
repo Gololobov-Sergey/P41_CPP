@@ -182,6 +182,62 @@ int main()
 
 
 
+	///* десятки и единички */
+	//int t = (number / 10) % 10;
+	//int u = number % 10;
+
+	//if (t == 1) {
+	//	switch (u) {
+	//	case 0: cout << " десять"; break;
+	//	case 1: cout << " одиннадцать"; break;
+	//	case 2: cout << " двенадцать"; break;
+	//	case 3: cout << " тринадцать"; break;
+	//	case 4: cout << " четырнадцать"; break;
+	//	case 5: cout << " пятнадцать"; break;
+	//	case 6: cout << " шестнадцать"; break;
+	//	case 7: cout << " семнадцать"; break;
+	//	case 8: cout << " восемнадцать"; break;
+	//	case 9: cout << " девятнадцать"; break;
+	//	}
+	//}
+	//else {
+	//	switch (t) {
+	//	case 2: cout << " двадцать"; break;
+	//	case 3: cout << " тридцать"; break;
+	//	case 4: cout << " сорок"; break;
+	//	case 5: cout << " пятьдесят"; break;
+	//	case 6: cout << " шестьдесят"; break;
+	//	case 7: cout << " семьдесят"; break;
+	//	case 8: cout << " восемьдесят"; break;
+	//	case 9: cout << " девяносто"; break;
+	//	}
+
+	//	switch (u) {
+	//	case 1: cout << " один"; break;
+	//	case 2: cout << " два"; break;
+	//	case 3: cout << " три"; break;
+	//	case 4: cout << " четыре"; break;
+	//	case 5: cout << " пять"; break;
+	//	case 6: cout << " шесть"; break;
+	//	case 7: cout << " семь"; break;
+	//	case 8: cout << " восемь"; break;
+	//	case 9: cout << " девять"; break;
+	//	}
+	//}
+	//cout << endl;
+
+
+	/*int m;
+	cin >> m;
+	switch (m)
+	{
+	case 1: case 2: case 12: cout << "Winter" << endl; break;
+	case 3: case 4: case 5:  cout << "Winter" << endl; break;
+	default:
+		break;
+	}*/
+
+
 	/// 21.01.2025 //////
 
 	/*int a, b, c;
@@ -212,7 +268,27 @@ int main()
 	cout << "b= ";
 	cin >> b;
 
-	if (op == '+') 
+	switch (op)
+	{
+	case '+':
+		cout << "rez = " << a + b << endl;
+		break;
+
+	case '-':
+		cout << "rez = " << a - b << endl;
+		break;
+	case '*': 
+		cout << "rez = " << a * b << endl;
+		break;
+	case '/': 
+		cout << "rez = " << a / b << endl;
+		break;
+	default:
+		cout << "error404!" << endl;
+		break;
+	}*/
+
+	/*if (op == '+') 
 	{
 		cout << "rez: " << a + b << endl;
 	}
