@@ -22,6 +22,84 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+
+	/// 01.02.2025 //////
+
+	srand(time(0));
+	const int size = 10;
+	int min = 0, max = 10;
+	int arr[size]; // = { 3,45,67,0 };
+
+	int arrB[size];
+
+	for (size_t i = 0; i < size; i++)
+	{
+		arr[i] = rand() % (max - min + 1) + min;
+	}
+
+	/*for (size_t i = 0; i < 4; i++)
+	{
+		cin >> arr[i];
+	}*/
+
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout <<  endl;
+
+	/*int count = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] == 0)
+			count++;
+	}
+	cout << count << endl;
+
+	int count0 = 0;
+	for (size_t i = 0; arr[i] != 1; i++)
+	{
+		count0++;
+	}
+	cout << count0 << endl;*/
+
+
+
+	/*int count = 0;
+	int n;
+	cin >> n;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] == n)
+			count++;
+	}
+	cout << count << endl;*/
+
+
+	/*int iMax = 0, iMin = 0;
+	int maxElem = arr[0], minElem = arr[0];
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] > maxElem)
+		{
+			maxElem = arr[i];
+			iMax = i;
+		}
+
+		if (arr[i] < minElem)
+		{
+			minElem = arr[i];
+			iMin = i;
+		}
+	}
+	
+	int iBig = (iMax > iMin) ? iMax : iMin;
+	int iSmall = (iMin < iMax) ? iMin : iMax;
+	int count = iBig - iSmall - 1;
+	cout << iSmall << " " << iBig << endl;
+	cout << count << endl;*/
+
+
 	/// 28.01.2025 //////
 
 	/*for (int i = 5; i >= 0; i--)
@@ -79,19 +157,28 @@ int main()
 	//cout << sum << endl;
 
 
+	/*int d = (5 + 28)%7;
+
 	SetColor(White, Black);
 	cout << " -------- 1 ---------" << endl;
 	cout << " Mo Tu We Th Fr";
 	SetColor(LightRed, Black);
 	cout << " Sa Su" << endl;
-	for (size_t i = 1; i <= 30; i++)
+	for (int i = 1 - d; i <= 31; i++)
 	{
-		SetColor((i % 7 == 0 || (i + 1) % 7 == 0) ? LightRed : White, Black);
-		cout << setw(3) << i;
-		if (i % 7 == 0)
+		SetColor(((i+d) % 7 == 0 || (i + 1 + d) % 7 == 0) ? LightRed : White, Black);
+		if (i <= 0)
+		{
+			cout << setw(3) << " ";
+		}
+		else
+		{
+			cout << setw(3) << i;
+		}
+		if ((i+d) % 7 == 0)
 			cout << endl;
 	}
-	cout << endl;
+	cout << endl;*/
 
 
 
@@ -248,5 +335,6 @@ int main()
 	
 
 	system("pause");
+	return 100;
 }
 
