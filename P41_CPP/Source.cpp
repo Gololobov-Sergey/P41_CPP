@@ -22,31 +22,145 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+	/// 04.02.2025 //////
+	srand(time(0));
+	//const int size = 10;
+	//int min = 0, max = 10;
+	//int arr[size]; // = { 3,45,67,0 };
+
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	arr[i] = rand() % (max - min + 1) + min;
+	//}
+
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	cout << arr[i] << " ";
+	//}
+	//cout << endl;
+
+
+	//for (size_t i = 0; i < size - 1; i++)
+	//{
+	//	for (size_t j = 0; j < size - 1 - i; j++)
+	//	{
+	//		if (arr[j] > arr[j + 1]) 
+	//		{
+	//			swap(arr[j], arr[j + 1]);
+	//		}
+	//	}
+	//}
+
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	cout << arr[i] << " ";
+	//}
+	//cout << endl;
+
+
+	const int row = 4;
+	const int col = 4;
+	int arr[row][col];
+	int min = 0, max = 9;
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % (max - min + 1) + min;
+		}
+	}
+
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+	/*for (size_t i = 0; i < row; i++)
+	{
+		swap(arr[i][0], arr[i][col-1]);
+	}
+	cout << endl;*/
+
+	/*for (size_t j = 0; j < col; j++)
+	{
+		for (size_t i = 0; i < row / 2; i++)
+		{
+			swap(arr[i][j], arr[row-1-i][j]);
+		}
+	}
+	cout << endl;*/
+
+
+	/*for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col / 2; j++)
+		{
+			swap(arr[i][j], arr[i][col-1-j]);
+		}
+	}
+	cout << endl;*/
+
+
+
+	for (size_t i = 0; i < row - 1; i++)
+	{
+		for (size_t j = 0; j < col-1-i; j++)
+		{
+			swap(arr[i][j], arr[row-1-j][col-1-i]);
+		}
+	}
+	cout << endl;
+
+	/*for (size_t i = 0; i < row - 1; i++)
+	{
+		for (size_t j = 1 + i; j < col; j++)
+		{
+			swap(arr[i][j], arr[j][i]);
+		}
+	}
+	cout << endl;*/
+
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+
+	int a[3][3][3][3][4][6][10][3];
+
 
 	/// 01.02.2025 //////
 
-	srand(time(0));
-	const int size = 10;
-	int min = 0, max = 10;
-	int arr[size]; // = { 3,45,67,0 };
+	//srand(time(0));
+	//const int size = 10;
+	//int min = 0, max = 10;
+	//int arr[size]; // = { 3,45,67,0 };
 
-	int arrB[size];
+	//int arrB[size];
 
-	for (size_t i = 0; i < size; i++)
-	{
-		arr[i] = rand() % (max - min + 1) + min;
-	}
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	arr[i] = rand() % (max - min + 1) + min;
+	//}
 
-	/*for (size_t i = 0; i < 4; i++)
-	{
-		cin >> arr[i];
-	}*/
+	///*for (size_t i = 0; i < 4; i++)
+	//{
+	//	cin >> arr[i];
+	//}*/
 
-	for (size_t i = 0; i < size; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout <<  endl;
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	cout << arr[i] << " ";
+	//}
+	//cout <<  endl;
 
 	/*int count = 0;
 	for (size_t i = 0; i < size; i++)
