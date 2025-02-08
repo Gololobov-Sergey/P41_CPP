@@ -1,19 +1,14 @@
 ﻿#include<iostream>
 #include<Windows.h>
 #include<iomanip>
+#include<algorithm>
+
+#include"Timer.h"
+#include"myFunc.h"
 
 using namespace std;
 
-enum Color
-{
-	Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8,
-	LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15
-};
 
-void SetColor(int text, int background)
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
-}
 
 
 int main()
@@ -22,10 +17,50 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
-	/// 04.02.2025 //////
-	srand(time(0));
+	/// 08.02.2025 //////
+
+	starLine();
+	starLine(30);
+	starLine(40, '#');
+
+	f(1010011101)
+
+	//srand(time(0));
 	//const int size = 10;
-	//int min = 0, max = 10;
+	//int min = 0, max = 1000;
+	//int arr[size]; // = { 3,45,67,0 };
+
+	//setArray(arr, size, 0, 10);
+	//printArray(arr, size);
+	//
+	//bubbleSort(arr, size);
+	//
+	//printArray(arr, size);
+
+	//cout << Sum() << endl;
+	//cout << Sum(3) << endl;
+	//cout << Sum(3, 3) << endl;
+
+	
+	/*for (size_t i = 0; i < 1000; i++)
+	{
+		if (isPrime(i))
+			cout << i << " ";
+	}*/
+
+
+	/*starLine();
+	starLine();
+	starLine();
+
+	int c = Sum(2, 5);
+	cout << avg(3,4,6) << endl;*/
+
+
+	/// 04.02.2025 //////
+	//srand(time(0));
+	//const int size = 10000;
+	//int min = 0, max = 1000;
 	//int arr[size]; // = { 3,45,67,0 };
 
 	//for (size_t i = 0; i < size; i++)
@@ -33,32 +68,36 @@ int main()
 	//	arr[i] = rand() % (max - min + 1) + min;
 	//}
 
-	//for (size_t i = 0; i < size; i++)
-	//{
-	//	cout << arr[i] << " ";
-	//}
-	//cout << endl;
+	/*for (size_t i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;*/
+
+	//Timer t;
+
+	/*for (size_t i = 0; i < size - 1; i++)
+	{
+		for (size_t j = 0; j < size - 1 - i; j++)
+		{
+			if (arr[j] > arr[j + 1]) 
+			{
+				swap(arr[j], arr[j + 1]);
+			}
+		}
+	}*/
+	
+
+	//cout << t.elapsed() << endl;
+
+	/*for (size_t i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;*/
 
 
-	//for (size_t i = 0; i < size - 1; i++)
-	//{
-	//	for (size_t j = 0; j < size - 1 - i; j++)
-	//	{
-	//		if (arr[j] > arr[j + 1]) 
-	//		{
-	//			swap(arr[j], arr[j + 1]);
-	//		}
-	//	}
-	//}
-
-	//for (size_t i = 0; i < size; i++)
-	//{
-	//	cout << arr[i] << " ";
-	//}
-	//cout << endl;
-
-
-	const int row = 4;
+	/*const int row = 4;
 	const int col = 4;
 	int arr[row][col];
 	int min = 0, max = 9;
@@ -77,7 +116,7 @@ int main()
 			cout << arr[i][j] << " ";
 		}
 		cout << endl;
-	}
+	}*/
 
 	/*for (size_t i = 0; i < row; i++)
 	{
@@ -106,14 +145,14 @@ int main()
 
 
 
-	for (size_t i = 0; i < row - 1; i++)
+	/*for (size_t i = 0; i < row - 1; i++)
 	{
 		for (size_t j = 0; j < col-1-i; j++)
 		{
 			swap(arr[i][j], arr[row-1-j][col-1-i]);
 		}
 	}
-	cout << endl;
+	cout << endl;*/
 
 	/*for (size_t i = 0; i < row - 1; i++)
 	{
@@ -124,7 +163,7 @@ int main()
 	}
 	cout << endl;*/
 
-	for (size_t i = 0; i < row; i++)
+	/*for (size_t i = 0; i < row; i++)
 	{
 		for (size_t j = 0; j < col; j++)
 		{
@@ -134,7 +173,7 @@ int main()
 	}
 
 
-	int a[3][3][3][3][4][6][10][3];
+	int a[3][3][3][3][4][6][10][3];*/
 
 
 	/// 01.02.2025 //////
