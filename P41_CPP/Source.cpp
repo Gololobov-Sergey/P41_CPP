@@ -16,26 +16,52 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
+	
+	
+	/// 11.02.2025 //////
+
+	cout << Sum(3.5, 6, 'A') << endl;
+	cout << Sum('A', 3, 6.5) << endl;
+
+	int a = 3;
+	float b = 3.3;
+
+	auto c = a + b;
+
+	decltype(a + b) c;
+
+	// X | 2 | X
+	//-----------
+	// 4 | 0 | X
+	//-----------
+	// 7 | 8 | 9
+	//
+	//
+	// 
 
 	/// 08.02.2025 //////
 
-	starLine();
+	/*starLine();
 	starLine(30);
-	starLine(40, '#');
+	starLine(40, '#');*/
 
-	f(1010011101)
+	//f(1010011101)
 
 	//srand(time(0));
-	//const int size = 10;
+	//const int size = 5;
 	//int min = 0, max = 1000;
-	//int arr[size]; // = { 3,45,67,0 };
+	//char arr[size]; // = { 3,45,67,0 };
 
-	//setArray(arr, size, 0, 10);
+	//setArray(arr, size);
 	//printArray(arr, size);
-	//
+	
 	//bubbleSort(arr, size);
-	//
+	
 	//printArray(arr, size);
+
+	//cout << maxValueArray(arr, size) << endl;
+
+	//cout << lineSearch(arr, size, 'A') << endl;
 
 	//cout << Sum() << endl;
 	//cout << Sum(3) << endl;
@@ -98,7 +124,7 @@ int main()
 
 
 	/*const int row = 4;
-	const int col = 4;
+	const int col = 5;
 	int arr[row][col];
 	int min = 0, max = 9;
 	for (size_t i = 0; i < row; i++)

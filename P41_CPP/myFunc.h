@@ -26,23 +26,41 @@ void starLine(int count = 10, char symbol = '*')
 	cout << endl;
 }
 
-int Sum(int a = 0, int b = 5)
-{
-	return a + b;
-}
+//int Sum(int a = 0, int b = 5)
+//{
+//	return a + b;
+//}
 
 double avg(int a, int b, int c)
 {
 	return (a + b + c) / 3.;
 }
 
-void printArray(int arr[], int size)
+template<class T>
+void printArray(T arr[], int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
 		cout << arr[i] << " ";
 	}
 	cout << endl;
+}
+
+
+void setArray(float arr[], int size, int min, int max)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		arr[i] = rand() % (max - min + 1) + min;
+	}
+}
+
+void setArray(char arr[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		arr[i] = rand() % (90 - 65 + 1) + 65;
+	}
 }
 
 void setArray(int arr[], int size, int min, int max)
@@ -53,8 +71,8 @@ void setArray(int arr[], int size, int min, int max)
 	}
 }
 
-
-void bubbleSort(int arr[], int size)
+template<class T>
+void bubbleSort(T arr[], int size)
 {
 	for (size_t i = 0; i < size - 1; i++)
 	{
@@ -78,9 +96,11 @@ bool isPrime(int n)
 	return true;
 }
 
-int maxValueArray(int arr[], int size)
+
+template<class T>
+T maxValueArray(T arr[], int size)
 {
-	int maxElem = arr[0];
+	T maxElem = arr[0];
 	for (size_t i = 0; i < size; i++)
 	{
 		if (arr[i] > maxElem)
@@ -89,4 +109,39 @@ int maxValueArray(int arr[], int size)
 		}
 	}
 	return maxElem;
+}
+
+
+template<class T>
+int lineSearch(T arr[], int size, T key)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] == key) 
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+
+template<class T1, class T2, class T3>
+auto Sum(T1 a, T2 b, T3 c) -> decltype(a + b)
+{
+	return a + b + c;
+}
+
+
+template<class T>
+void printArray2D(T arr[10][10], int row, int col)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
 }
