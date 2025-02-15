@@ -17,10 +17,104 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 	
+	/// 15.02.2025 //////
+
+	// a = length
+	//int a = 5;
+
+	//cout << a << endl;
+	//cout << typeid(a).name() << endl;
+	//cout << sizeof(a) << endl;
+	//cout << &a << endl;
+
+	//double d = 5.3;
+
+	//int* pa = &a;
+	//cout << pa << endl;
+	//cout << *pa << endl;
+	//*pa = 999;
+	//cout << a << endl;
+
+	////pa++;
+	////cout << pa << endl;
+	////cout << *pa << endl;
+
+	//int b = 0;
+	//int* pb = nullptr;
+
+	//if(pb == nullptr)
+	//	pb = &b;
+
+	//cout << (pa != pb) << endl;
+
+	// p + n = p + type * n
+
+
+	/*int arr[] = { 9,2,43,6,89,3 };
+	cout << arr << endl;
+	for (size_t i = 0; i < 6; i++)
+	{
+		cout << *(arr + i) << " ";
+	}
+	cout << endl;
+
+	for (int* i = arr; i < &arr[6]; i++)
+	{
+		cout << *i << " ";
+	}
+	cout << endl;*/
+
+
+	/*const int size = 260000;
+	int arr[size];*/
+
+	/*int size;
+	cin >> size;
+	int* p = new int[size];
+	setArray(p, size, 0, 10);
+	printArray(p, size);
+
+	int count = 0;
+	int* b = nullptr;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (p[i] % 2 == 0)
+			b = addElemArray(b, count++, p[i]);
+	}*/
+
+	/*int* b = new int[count];
+	count = 0;
+
+	for (size_t i = 0; i < size; i++)
+	{
+		if (p[i] % 2 == 0)
+			b[count++] = p[i];
+	}*/
+
+	//p = addElemArray(p, size++, 99);
+	//printArray(b, count);
+
+	//delete p;
+
+	/*int* pa;
+	double* pb;
+	char* pc;
+	cout << sizeof(pa) << endl;
+	cout << sizeof(pb) << endl;
+	cout << sizeof(pc) << endl;*/
+
+	
+
+	/*cout << p << endl;
+	*p = 100;
+	cout << *p << endl;*/
+	
+	
+	// *(a + i) = a[i]
 	
 	/// 11.02.2025 //////
 
-	cout << Sum(3.5, 6, 'A') << endl;
+	/*cout << Sum(3.5, 6, 'A') << endl;
 	cout << Sum('A', 3, 6.5) << endl;
 
 	int a = 3;
@@ -28,7 +122,7 @@ int main()
 
 	auto c = a + b;
 
-	decltype(a + b) c;
+	decltype(a + b) c;*/
 
 	// X | 2 | X
 	//-----------
@@ -590,6 +684,6 @@ int main()
 	
 
 	system("pause");
-	return 100;
+	return 0;
 }
 

@@ -37,7 +37,7 @@ double avg(int a, int b, int c)
 }
 
 template<class T>
-void printArray(T arr[], int size)
+void printArray(T* arr, int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -86,6 +86,11 @@ void bubbleSort(T arr[], int size)
 	}
 }
 
+/// <summary>
+/// Фнкція визначення простого числа
+/// </summary>
+/// <param name="n">- чисо</param>
+/// <returns>Логічне значення bool</returns>
 bool isPrime(int n)
 {
 	for (size_t i = 2; i < n; i++)
@@ -144,4 +149,18 @@ void printArray2D(T arr[10][10], int row, int col)
 		}
 		cout << endl;
 	}
+}
+
+template<class T>
+T* addElemArray(T* arr, int size, T elem)
+{
+	T* temp = new T[size + 1];
+	for (size_t i = 0; i < size; i++)
+	{
+		temp[i] = arr[i];
+	}
+	temp[size] = elem;
+	delete arr;
+	//size++;
+	return temp;
 }
