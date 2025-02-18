@@ -152,7 +152,7 @@ void printArray2D(T arr[10][10], int row, int col)
 }
 
 template<class T>
-T* addElemArray(T* arr, int size, T elem)
+void addElemArray(T*& arr, int& size, T elem)
 {
 	T* temp = new T[size + 1];
 	for (size_t i = 0; i < size; i++)
@@ -161,6 +161,77 @@ T* addElemArray(T* arr, int size, T elem)
 	}
 	temp[size] = elem;
 	delete arr;
-	//size++;
-	return temp;
+	size++;
+	arr = temp;
+}
+
+template<class T>
+void delElemArray(T*& arr, int& size)
+{
+	T* temp = new T[size - 1];
+	for (size_t i = 0; i < size-1; i++)
+	{
+		temp[i] = arr[i];
+	}
+	delete arr;
+	size--;
+	arr = temp;
+}
+
+
+template<class T>
+void addElemArray(T*& arr, int& size, T elem, int index)
+{
+	if (index < 0)
+	{
+		return;
+	}
+	else if (index == size)
+	{
+		addElemArray(arr, size, elem);
+	}
+	else
+	{
+		T* temp = new T[size + 1];
+		for (size_t i = 0; i < index; i++)
+		{
+			temp[i] = arr[i];
+		}
+		temp[index] = elem;
+		for (size_t i = index; i < size; i++)
+		{
+			temp[i + 1] = arr[i];
+		}
+		delete arr;
+		size++;
+		arr = temp;
+	}
+}
+
+
+template<class T>
+void delElemArray(T*& arr, int& size, int index)
+{
+	T* temp = new T[size - 1];
+	for (size_t i = 0; i < index; i++)
+	{
+		temp[i] = arr[i];
+	}
+	for (size_t i = index+1; i < size; i++)
+	{
+		temp[i-1] = arr[i];
+	}
+	delete arr; 
+	size--;
+	arr = temp;
+}
+
+
+void my_swap(int& a, int& b)
+{
+	int t = a;
+	a = b;
+	b = t;
+	cout << "In func:" << endl;
+	cout << a << " " << b << endl;
 }
