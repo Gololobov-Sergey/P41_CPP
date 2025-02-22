@@ -37,7 +37,7 @@ double avg(int a, int b, int c)
 }
 
 template<class T>
-void printArray(T* arr, int size)
+void printArray(const T* arr, int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -72,13 +72,36 @@ void setArray(int arr[], int size, int min, int max)
 }
 
 template<class T>
-void bubbleSort(T arr[], int size)
+bool asc(T a, T b)
+{
+	return a > b;
+}
+
+template<class T>
+bool desc(T a, T b)
+{
+	return a < b;
+}
+
+
+bool lastNumber(int a, int b)
+{
+	if (a % 10 > b % 10)
+		return true;
+	else if (a % 10 == b % 10)
+		return asc(a, b);
+	else
+		return false;
+}
+
+template<class T>
+void bubbleSort(T* arr, int size, bool(*method)(T, T) = asc)
 {
 	for (size_t i = 0; i < size - 1; i++)
 	{
 		for (size_t j = 0; j < size - 1 - i; j++)
 		{
-			if (arr[j] > arr[j + 1])
+			if (method(arr[j], arr[j + 1]))
 			{
 				swap(arr[j], arr[j + 1]);
 			}
@@ -180,7 +203,7 @@ void delElemArray(T*& arr, int& size)
 
 
 template<class T>
-void addElemArray(T*& arr, int& size, T elem, int index)
+void addElemArray(T*& arr, int& size, const T& elem, int index)
 {
 	if (index < 0)
 	{
@@ -234,4 +257,46 @@ void my_swap(int& a, int& b)
 	b = t;
 	cout << "In func:" << endl;
 	cout << a << " " << b << endl;
+}
+
+void hello()
+{
+	cout << "Hello" << endl;
+}
+
+void privet()
+{
+	cout << "Privet" << endl;
+}
+
+int lenStr(const char* str)
+{
+	int i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return i;
+}
+
+char* replaceSymbol(const char* str, char _old, char _new)
+{
+	int len = strlen(str);
+	char* temp = new char[len + 1];
+
+	for (size_t i = 0; i < len + 1; i++)
+	{
+		temp[i] = str[i];
+	}
+
+	int i = 0;
+	while (temp[i] != '\0')
+	{
+		if (temp[i] == _old)
+		{
+			temp[i] = _new;
+		}
+		i++;
+	}
+	return temp;
 }

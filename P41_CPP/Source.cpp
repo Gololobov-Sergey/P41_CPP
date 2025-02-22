@@ -16,6 +16,85 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+	/// 22.02.2025 //////
+
+
+	/*int arr[] = { 1,12,3,5,76 };
+	cout << arr << endl;
+
+	char st[] = { 'H', 'e', 'l', 'l', 'o', '\0'};
+	char st2[] = "Hello C++";
+	cout << st << endl;
+	cout << st2 << endl; 
+
+	cout << st + 3 << endl;
+
+	cout << lenStr("Hello") << endl;
+	cout << lenStr(st) << endl;
+
+	cout << strlen(st) << endl;*/
+
+
+	char name[30];
+	cin.getline(name, 30);
+	//cout << name << endl;
+
+	char* st = replaceSymbol(name, 'a', 'o');
+	cout << st << endl;
+
+	//cout << name << endl;
+
+
+	//cout << hello << endl;
+	//hello();
+
+	//// type (*name)(param)
+
+	//void(*message)() = hello;
+	//message();
+	//message = privet;
+	//message();
+
+	//void(*arr[])() = { hello, privet };
+	//for (size_t i = 0; i < 2; i++)
+	//{
+	//	arr[i]();
+	//}
+
+
+	/*int size;
+	cin >> size;
+	int* p = new int[size];
+	setArray(p, size, 0, 100);
+	printArray(p, size);
+	bubbleSort(p, size, lastNumber);
+	printArray(p, size);*/
+
+
+	/*int a = 5;
+	int b = 9;*/
+
+	//const int* pa = &a; // покажчик на константне значення
+	//pa = &b;
+	//*pa = 99; // error
+	//a = 99;
+
+	//int* const pa = &a; // константний покажчик
+	//*pa = 99;
+	//pa = &b; // error
+
+	//const int* const pa = &a; // константний покажчик на константне значення
+	//*pa = 99; // error
+	//pa = &b;  // error
+
+
+	/*int& ra = a;
+	ra = b;
+	cout << ra << " " << a << " " << b << endl;
+
+	const int& cra = a;*/
+	//cra = 99;
+
 
 	/// 18.02.2025 //////
 
@@ -25,7 +104,7 @@ int main()
 	cout << a << " " << b << endl;*/
 
 
-	int size;
+	/*int size;
 	cin >> size;
 	int* p = new int[size];
 	setArray(p, size, 0, 10);
@@ -34,10 +113,11 @@ int main()
 	printArray(p, size);
 	delElemArray(p, size);
 	printArray(p, size);
+	int m = 999;
 	addElemArray(p, size, 999, 5);
 	printArray(p, size);
 	delElemArray(p, size, 3);
-	printArray(p, size);
+	printArray(p, size);*/
 
 	/*int a = 5;       int b = 9;
 	int* pa = &a;    int& ra = b;
@@ -77,6 +157,8 @@ int main()
 	//cout << (pa != pb) << endl;
 
 	// p + n = p + type * n
+	// 
+	// *(arr + i) = a[i]
 
 
 	/*int arr[] = { 9,2,43,6,89,3 };
