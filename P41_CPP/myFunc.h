@@ -300,3 +300,16 @@ char* replaceSymbol(const char* str, char _old, char _new)
 	}
 	return temp;
 }
+
+int countWord(const char* st)
+{
+	int i = 0;
+	int word = 0;
+	while (st[i] != '\0')
+	{
+		if(st[i] != ' ' && (st[i+1] == ' ' || st[i+1] == '\0'))
+			word++;
+		i++;
+	}
+	return word;
+}

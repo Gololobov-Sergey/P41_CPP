@@ -16,6 +16,74 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+
+	/// 25.02.2025 //////
+
+	/*char st1[80], st2[80];
+	cin.getline(st1, 80);
+	cin.getline(st2, 80);*/
+
+	//strcpy_s(st2, 80, st1);
+	//strncpy_s(st2, 80, st1, 5);
+
+	//strcat_s(st2, 80, st1);
+	//strncat_s(st2, 80, st1, 5);
+
+	//cout << strcmp(st1, st2) << endl; // >=1 , 0, <1
+	//cout << strncmp(st1, st2, 4) << endl; // >=1 , 0, <1
+	//cout << _stricmp(st1, st2) << endl; // >=1 , 0, <1
+	//cout << _strnicmp(st1, st2, 5) << endl; // >=1 , 0, <1
+
+	//char* t = strstr(st1, st2);
+	//char* t = strrchr(st1, 'a');
+	//char* t = strchr(st1, 'a');
+	//if(t)
+		//cout << t << endl;
+
+	/*cout << isalnum('a') << endl;
+	cout << isalpha('a') << endl;
+	cout << isdigit('a') << endl;
+	cout << ispunct('a') << endl;
+	cout << isprint('a') << endl;
+	cout << isspace('a') << endl;
+	cout << islower('a') << endl;
+	cout << isupper('a') << endl;*/
+
+	//_strset_s(st1, '#');
+
+	/*cout << st1 << endl;
+	cout << st2 << endl;*/
+
+	cout << countWord("      kjf     lkewjlwejwer     34r34     ") << endl;
+
+
+	
+
+
+
+	/*int sizeA, sizeB;
+	cin >> sizeA >> sizeB;
+	int* a = new int[sizeA];
+	int* b = new int[sizeB];
+	setArray(a, sizeA, 0, 10);
+	setArray(b, sizeB, 0, 10);
+	printArray(a, sizeA);
+	printArray(b, sizeB);
+
+	int* c = nullptr;
+	int sizeC = 0;
+
+	for (size_t i = 0; i < sizeA; i++)
+	{
+		if (lineSearch(b, sizeB, a[i]) == -1 && lineSearch(c, sizeC, a[i]) == -1)
+		{
+			addElemArray(c, sizeC, a[i]);
+		}
+	}
+
+	printArray(c, sizeC);*/
+
+
 	/// 22.02.2025 //////
 
 
@@ -35,12 +103,12 @@ int main()
 	cout << strlen(st) << endl;*/
 
 
-	char name[30];
-	cin.getline(name, 30);
-	//cout << name << endl;
+	//char name[30];
+	//cin.getline(name, 30);
+	////cout << name << endl;
 
-	char* st = replaceSymbol(name, 'a', 'o');
-	cout << st << endl;
+	//char* st = replaceSymbol(name, 'a', 'o');
+	//cout << st << endl;
 
 	//cout << name << endl;
 
