@@ -162,7 +162,7 @@ auto Sum(T1 a, T2 b, T3 c) -> decltype(a + b)
 
 
 template<class T>
-void printArray2D(T arr[10][10], int row, int col)
+void printArray2D(T** arr, int row, int col)
 {
 	for (size_t i = 0; i < row; i++)
 	{
@@ -171,6 +171,19 @@ void printArray2D(T arr[10][10], int row, int col)
 			cout << arr[i][j] << " ";
 		}
 		cout << endl;
+	}
+}
+
+
+
+void setArray2D(int** arr, int row, int col, int min = 0, int max = 9)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % (max - min + 1) + min;
+		}
 	}
 }
 
@@ -312,4 +325,69 @@ int countWord(const char* st)
 		i++;
 	}
 	return word;
+}
+
+template<class T>
+T** createArray2D(int row, int col)
+{
+	T** p = new T* [row];
+	for (size_t i = 0; i < row; i++)
+	{
+		p[i] = new T[col];
+	}
+	return p;
+}
+
+template<class T>
+void createArray2D(T**& p, int row, int col)
+{
+	p = createArray2D<T>(row, col);
+}
+
+template<class T>
+void addRowArray2D(T**& p, int& row, int col)
+{
+	T** temp = new T * [row + 1];
+	for (size_t i = 0; i < row; i++)
+	{
+		temp[i] = p[i];
+	}
+	temp[row] = new T[col]{0};
+	delete p;
+	row++;
+	p = temp;
+}
+
+template<class T>
+void delRowArray2D(T**& p, int& row)
+{
+	T** temp = new T * [row - 1];
+	for (size_t i = 0; i < row - 1; i++)
+	{
+		temp[i] = p[i];
+	}
+	delete p[row - 1];
+	delete p;
+	row--;
+	p = temp;
+}
+
+
+
+template<class T>
+void addRowIndexArray2D(T**& p, int& row, int col, int index = 0)
+{
+	T** temp = new T * [row + 1];
+	for (size_t i = 0; i < index; i++)
+	{
+		temp[i] = p[i];
+	}
+	temp[index] = new T[col]{ 0 };
+	for (size_t i = index; i < row; i++)
+	{
+		temp[i+1] = p[i];
+	}
+	delete p;
+	row++;
+	p = temp;
 }

@@ -16,6 +16,44 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+	/// 01.03.2025 //////
+
+
+	int a = 9;
+	int* pa = &a;
+	int** ppa = &pa;
+
+	cout << *pa << endl;
+	cout << **ppa << endl;
+
+	int row, col;
+	cin >> row >> col;
+
+	int** p1 = nullptr;
+
+	int** p = createArray2D<int>(row, col);
+	//createArray2D(p1, row, col);
+	setArray2D(p, row, col);
+	printArray2D(p, row, col);
+	cout << endl;
+
+	addRowIndexArray2D(p, row, col, row);
+	printArray2D(p, row, col);
+	cout << endl;
+
+	delRowArray2D(p, row);
+	printArray2D(p, row, col);
+	cout << endl;
+
+	addRowIndexArray2D(p, row, col);
+	printArray2D(p, row, col);
+	cout << endl;
+
+	addRowIndexArray2D(p, row, col, -2000);
+	printArray2D(p, row, col);
+	cout << endl;
+
+	// *(*(p + i) + j) = p[i][j];
 
 	/// 25.02.2025 //////
 
@@ -54,7 +92,7 @@ int main()
 	/*cout << st1 << endl;
 	cout << st2 << endl;*/
 
-	cout << countWord("      kjf     lkewjlwejwer     34r34     ") << endl;
+	//cout << countWord("      kjf     lkewjlwejwer     34r34     ") << endl;
 
 
 	
