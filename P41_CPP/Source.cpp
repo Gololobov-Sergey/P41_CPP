@@ -16,28 +16,75 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+
+	/// 04.03.2025 //////
+
+
+	int size;
+	cin >> size;
+	int* p = new int[size];
+	setArray(p, size, 0, 9);
+	printArray(p, size);
+
+	int*** p3 = convert2D(p, size);
+
+	print3(p3);
+
+
+
+
+
+
+	/*int size = 5;
+	char buff[30];
+
+	char** pib = new char*[size];
+
+	for (size_t i = 0; i < size; i++)
+	{
+		cin.getline(buff, 30);
+		int len = strlen(buff);
+		pib[i] = new char[len + 1];
+		strcpy_s(pib[i], len + 1, buff);
+	}
+	cout << endl;
+
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << pib[i] << endl;
+	}
+
+	bubbleSort(pib, size, strCompare);
+
+	cout << endl;
+
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << pib[i] << endl;
+	}*/
+
 	/// 01.03.2025 //////
 
 
-	int a = 9;
+	/*int a = 9;
 	int* pa = &a;
 	int** ppa = &pa;
 
 	cout << *pa << endl;
-	cout << **ppa << endl;
+	cout << **ppa << endl;*/
 
-	int row, col;
-	cin >> row >> col;
+	//int row, col;
+	//cin >> row >> col;
 
-	int** p1 = nullptr;
+	//int** p1 = nullptr;
 
-	int** p = createArray2D<int>(row, col);
-	//createArray2D(p1, row, col);
-	setArray2D(p, row, col);
-	printArray2D(p, row, col);
-	cout << endl;
+	//int** p = createArray2D<int>(row, col);
+	////createArray2D(p1, row, col);
+	//setArray2D(p, row, col);
+	//printArray2D(p, row, col);
+	//cout << endl;
 
-	addRowIndexArray2D(p, row, col, row);
+	/*addRowIndexArray2D(p, row, col, row);
 	printArray2D(p, row, col);
 	cout << endl;
 
@@ -49,9 +96,16 @@ int main()
 	printArray2D(p, row, col);
 	cout << endl;
 
-	addRowIndexArray2D(p, row, col, -2000);
+	addRowIndexArray2D(p, row, col, 2);
+	printArray2D(p, row, col);
+	cout << endl;*/
+
+	/*addColumnIndexArray2D(p, row, col, 2);
 	printArray2D(p, row, col);
 	cout << endl;
+
+
+	deleteArray2D(p, row);*/
 
 	// *(*(p + i) + j) = p[i][j];
 

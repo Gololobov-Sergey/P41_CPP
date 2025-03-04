@@ -94,6 +94,11 @@ bool lastNumber(int a, int b)
 		return false;
 }
 
+bool strCompare(char* st1, char* st2)
+{
+	return strcmp(st1, st2) >= 1;
+}
+
 template<class T>
 void bubbleSort(T* arr, int size, bool(*method)(T, T) = asc)
 {
@@ -145,7 +150,7 @@ int lineSearch(T arr[], int size, T key)
 {
 	for (size_t i = 0; i < size; i++)
 	{
-		if (arr[i] == key) 
+		if (arr[i] == key)
 		{
 			return i;
 		}
@@ -205,7 +210,7 @@ template<class T>
 void delElemArray(T*& arr, int& size)
 {
 	T* temp = new T[size - 1];
-	for (size_t i = 0; i < size-1; i++)
+	for (size_t i = 0; i < size - 1; i++)
 	{
 		temp[i] = arr[i];
 	}
@@ -253,11 +258,11 @@ void delElemArray(T*& arr, int& size, int index)
 	{
 		temp[i] = arr[i];
 	}
-	for (size_t i = index+1; i < size; i++)
+	for (size_t i = index + 1; i < size; i++)
 	{
-		temp[i-1] = arr[i];
+		temp[i - 1] = arr[i];
 	}
-	delete arr; 
+	delete arr;
 	size--;
 	arr = temp;
 }
@@ -320,7 +325,7 @@ int countWord(const char* st)
 	int word = 0;
 	while (st[i] != '\0')
 	{
-		if(st[i] != ' ' && (st[i+1] == ' ' || st[i+1] == '\0'))
+		if (st[i] != ' ' && (st[i + 1] == ' ' || st[i + 1] == '\0'))
 			word++;
 		i++;
 	}
@@ -330,13 +335,25 @@ int countWord(const char* st)
 template<class T>
 T** createArray2D(int row, int col)
 {
-	T** p = new T* [row];
+	T** p = new T * [row];
 	for (size_t i = 0; i < row; i++)
 	{
 		p[i] = new T[col];
 	}
 	return p;
 }
+
+template<class T>
+void deleteArray2D(T**& p, int row)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		delete p[i];
+	}
+	delete p;
+	p = nullptr;
+}
+
 
 template<class T>
 void createArray2D(T**& p, int row, int col)
@@ -352,7 +369,7 @@ void addRowArray2D(T**& p, int& row, int col)
 	{
 		temp[i] = p[i];
 	}
-	temp[row] = new T[col]{0};
+	temp[row] = new T[col]{ 0 };
 	delete p;
 	row++;
 	p = temp;
@@ -385,9 +402,79 @@ void addRowIndexArray2D(T**& p, int& row, int col, int index = 0)
 	temp[index] = new T[col]{ 0 };
 	for (size_t i = index; i < row; i++)
 	{
-		temp[i+1] = p[i];
+		temp[i + 1] = p[i];
 	}
 	delete p;
 	row++;
 	p = temp;
+}
+
+
+template<class T>
+void addColumnIndexArray2D(T**& p, int row, int& col, int index = 0)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		addElemArray(p[i], col, 0, index);
+		col--;
+		/*T* temp = new T[col + 1];
+		for (size_t j = 0; j < index; j++)
+		{
+			temp[j] = p[i][j];
+		}
+		temp[index] = 0;
+		for (size_t j = index; j < col; j++)
+		{
+			temp[j + 1] = p[i][j];
+		}
+		delete p[i];
+		p[i] = temp;*/
+	}
+	col++;
+}
+
+int*** convert2D(int* p, int size)
+{
+	int count = 0;
+	for (size_t i = 2; i < size; i++)
+	{
+		if (size % i == 0)
+		{
+			count++;
+		}
+	}
+
+	int*** p3 = new int** [count];
+
+	int k = 0;
+	int row, col;
+	for (size_t n = 2; n < size; n++)
+	{
+		if (size % n == 0)
+		{
+			row = n;
+			col = size / n;
+
+			createArray2D(p3[k], row, col);
+			for (size_t i = 0; i < size; i++)
+			{
+				p3[k][i / col][i % col] = p[i];
+			}
+			k++;
+		}
+	}
+
+	return p3;
+}
+
+void print3(int*** p)
+{
+	int k = _msize(p) / sizeof(int**);
+	for (size_t i = 0; i < k; i++)
+	{
+		int row = _msize(p[i]) / sizeof(int*);
+		int col = _msize(p[i][0]) / sizeof(int);
+		printArray2D(p[i], row, col);
+		cout << endl;
+	}
 }
