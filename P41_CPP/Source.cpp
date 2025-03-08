@@ -5,6 +5,8 @@
 
 #include"Timer.h"
 #include"myFunc.h"
+#include"Point.h"
+#include"Date.h"
 
 using namespace std;
 
@@ -17,10 +19,87 @@ int main()
 	cout.setf(ios::boolalpha);
 
 
+	/// 08.03.2025 //////
+
+	/*Point p;
+	p.name = 'A';
+	p.X = 10;
+	p.Y = 15;
+
+	Point p1 = {'B', 4, 6};
+
+	printPoint(p);
+	printPoint(p1);
+
+	Point p3[3];
+	p3[0].name = 'C';
+
+	Point* p4 = new Point;
+	p4->X = 10;
+	p4->Y = 15;*/
+
+	/*const int size = 5;
+	Point p[size];
+	for (size_t i = 0; i < size; i++)
+	{
+		p[i].name = 'A' + i;
+		p[i].X = rand() % 10;
+		p[i].Y = rand() % 10;
+
+		p[i].print();
+	}
+	float maxLen = 0;
+	int i1, i2;
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		for (size_t j = i + 1; j < size; j++)
+		{
+			float len = lenPoint(p[i], p[j]);
+			if (len > maxLen)
+			{
+				maxLen = len;
+				i1 = i;
+				i2 = j;
+			}
+		}
+	}
+
+	cout << maxLen << endl;
+	p[i1].print();
+	p[i2].print();*/
+
+	//cout << p << endl;
+
+
+	//Date d = { 8, 3, 2025 };
+	//d.print(); // 08.03.2025
+
+
+	Human h;
+	h.birthDay = { 8,3,2000 };
+	h.setName();
+	h.print();
+
+
+	Drob d1;
+	Drob d2;
+
+	Drob d3 = d1.add(d2);
+
+
+	/*for (float y = 1.3; y >= -1.1; y -= 0.06) {
+		for (float x = -1.2; x <= 1.2; x += 0.025)
+			if (pow((x * x + y * y - 1.0), 3) - x * x * y * y * y <= 0.0)
+				cout << '@';
+			else
+				cout << ' ';
+		cout << endl;
+	}*/
+
 	/// 04.03.2025 //////
 
 
-	int size;
+	/*int size;
 	cin >> size;
 	int* p = new int[size];
 	setArray(p, size, 0, 9);
@@ -28,10 +107,7 @@ int main()
 
 	int*** p3 = convert2D(p, size);
 
-	print3(p3);
-
-
-
+	print3(p3);*/
 
 
 
@@ -149,7 +225,7 @@ int main()
 	//cout << countWord("      kjf     lkewjlwejwer     34r34     ") << endl;
 
 
-	
+
 
 
 
@@ -185,7 +261,7 @@ int main()
 	char st[] = { 'H', 'e', 'l', 'l', 'o', '\0'};
 	char st2[] = "Hello C++";
 	cout << st << endl;
-	cout << st2 << endl; 
+	cout << st2 << endl;
 
 	cout << st + 3 << endl;
 
