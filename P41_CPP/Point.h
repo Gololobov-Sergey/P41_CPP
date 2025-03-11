@@ -54,3 +54,37 @@ struct Drob
 
 	}
 };
+
+
+struct Engine
+{
+	int cilinder = 4;
+
+	void start()
+	{
+		cout << "Engin started" << endl;
+	}
+
+	void stop()
+	{
+		cout << "Engin stoped" << endl;
+	}
+};
+
+
+struct Car
+{
+	Engine engine;
+
+	void move()
+	{
+		engine.start();
+		cout << "I`m moved..." << endl;
+		engine.stop();
+	}
+
+	void beep()
+	{
+		cout << "Beeep.. Beeepp\a\a\a\a" << endl;
+	}
+};

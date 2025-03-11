@@ -7,6 +7,7 @@
 #include"myFunc.h"
 #include"Point.h"
 #include"Date.h"
+#include"Bank.h"
 
 using namespace std;
 
@@ -17,6 +18,15 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
+
+
+	Bank bank;
+	bank.menu();
+
+
+	/*Car car;
+	car.move();
+	car.beep();*/
 
 
 	/// 08.03.2025 //////
@@ -75,7 +85,7 @@ int main()
 	//d.print(); // 08.03.2025
 
 
-	Human h;
+	/*Human h;
 	h.birthDay = { 8,3,2000 };
 	h.setName();
 	h.print();
@@ -84,7 +94,7 @@ int main()
 	Drob d1;
 	Drob d2;
 
-	Drob d3 = d1.add(d2);
+	Drob d3 = d1.add(d2);*/
 
 
 	/*for (float y = 1.3; y >= -1.1; y -= 0.06) {
