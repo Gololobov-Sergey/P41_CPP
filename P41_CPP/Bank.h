@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "myFunc.h"
+#include "Menu.h"
 
 int idCount = 0;
 
@@ -14,9 +14,63 @@ struct Account
 		cout << name << " " << number << " " << setw(6) << balance << endl;
 	}
 
+	void addSumm()
+	{
+		system("cls");
+		cout << "Внесення коштів" << endl;
+		int sum;
+		cout << "Введіть суму : ";
+		cin >> sum;
+		balance += sum;
+		cout << "Кошти внесені на рахунок" << endl;
+		system("pause");
+	}
+
+	void withDraw()
+	{
+		system("cls");
+		cout << "Зняття коштів" << endl;
+		int sum; 
+		cout << "Введіть суму : ";
+		cin >> sum;
+		if (balance - sum < 0)
+		{
+			SetColor(LightRed, Black);
+			cout << "Не достатньо коштів!!!" << endl;
+			SetColor(LightGray, Black);
+		}
+		else
+		{
+			balance -= sum;
+			cout << "Кошти зняті з рахунку" << endl;
+		}
+		system("pause");
+	}
+
 	void menu()
 	{
+		while (true)
+		{
+			system("cls");
+			cout << " --- Меню рахунку ---" << endl;
+			cout << endl;
+			print();
+			cout << endl;
+			cout << "1. Внесення коштів" << endl;
+			cout << "2. Зняття коштів" << endl;
+			cout << "3. Вихід" << endl;
+			int choice;
+			cin >> choice;
+			cin.ignore();
+			switch (choice)
+			{
+			case 1: addSumm(); break;
+			case 2: withDraw(); break;
+			case 3: return;
+			default: break;
+			}
 
+		}
 	}
 };
 
@@ -60,12 +114,32 @@ struct Client
 
 	void printAccounts()
 	{
-
+		system("cls");
+		SetColor(LightRed, Black);
+		cout << "Стан рахунків " << name << endl;
+		cout << "------------------------" << endl;
+		SetColor(LightGray, Black);
+		for (size_t i = 0; i < size; i++)
+		{
+			accounts[i].print();
+		}
+		system("pause");
 	}
 
 	void workWithAccount()
 	{
-
+		system("cls");
+		cout << "Вибір рахунка" << endl;
+		for (size_t i = 0; i < size; i++)
+		{
+			cout << i + 1 << " ";
+			accounts[i].print();
+		}
+		int choice;
+		cout << "Номер рахунку : ";
+		cin >> choice;
+		cin.ignore();
+		accounts[choice - 1].menu();
 	}
 
 	void menu()
@@ -157,19 +231,22 @@ struct Bank
 		{
 			system("cls");
 			cout << " --- Головне Меню ----" << endl;
-			cout << "1. Створити клієнта" << endl;
+			
+			int c = Menu::select_vertical({ "Створити клієнта" , "Вибрати клієнта", "Надрукувати клієнтів", "Вихід" }, HorizontalAlignment::Left, 2);
+			
+			/*cout << "1. Створити клієнта" << endl;
 			cout << "2. Вибрати клієнта" << endl;
 			cout << "3. Надрукувати клієнтів" << endl;
-			cout << "4. Вихід" << endl;
-			int choice;
+			cout << "4. Вихід" << endl;*/
+			/*int choice;
 			cin >> choice;
-			cin.ignore();
-			switch (choice)
+			cin.ignore();*/
+			switch (c)
 			{
-			case 1: addClients(); break;
-			case 2: selectClients(); break;
-			case 3: printClients(); break;
-			case 4: exit(0); break;
+			case 0: addClients(); break;
+			case 1: selectClients(); break;
+			case 2: printClients(); break;
+			case 3: exit(0); break;
 
 			default:
 				break;

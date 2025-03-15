@@ -2,6 +2,7 @@
 #include<Windows.h>
 #include<iomanip>
 #include<algorithm>
+#include<fstream>
 
 #include"Timer.h"
 #include"myFunc.h"
@@ -18,10 +19,103 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
+	
 
 
-	Bank bank;
-	bank.menu();
+	/// 15.03.2025 //////
+
+
+	int size = 0;
+	Point* p = nullptr;
+	/*for (size_t i = 0; i < size; i++)
+	{
+		p[i].name = 'A' + i;
+		p[i].X = rand() % 10;
+		p[i].Y = rand() % 10;
+
+		p[i].print();
+	}*/
+
+	/*ofstream out("points.txt");
+	for (size_t i = 0; i < size; i++)
+	{
+		out << p[i].name << " " << p[i].X << " " << p[i].Y << endl;
+	}*/
+
+	ifstream in("points.txt");
+	Point t;
+	int i = 0;
+	while(in >> t.name >> t.X >> t.Y)
+	{
+		addElemArray(p, size, t);
+		p[i++].print();
+	}
+
+
+	//int a[] = { 1,2,3,4,5 };
+
+	//ofstream fout;
+	//fout.open("text.txt");
+	//for (size_t i = 0; i < 5; i++)
+	//{
+	//	fout << a[i] << " ";
+	//}
+	//
+	////fout << "Helo C++" << endl;
+	//fout.close();
+
+	/*int* b = nullptr;
+	int size = 0;
+	ifstream fin;
+	fin.open("text.txt");
+
+	ofstream out("text2.txt");
+
+	if (fin.is_open())
+	{
+		int a;
+		while (fin >> a)
+		{
+			if (a % 2 == 0)
+			{
+				out << a << " ";
+			}
+		}
+	}
+	fin.close();
+	out.close();
+
+	printArray(b, size);*/
+
+
+	/*ifstream in("Point.h");
+	char buff[80];
+	while (in.getline(buff, 80))
+		cout << buff << endl;*/
+
+
+
+
+	//Bank bank;
+	//////
+	//bank.size = 2;
+	//bank.clients = new Client[2];
+	//
+	//bank.clients[0].name = new char[] {"Anna"};
+	//bank.clients[0].size = 1;
+	//bank.clients[0].id = ++idCount;
+	//bank.clients[0].accounts = new Account;
+	//strcpy_s(bank.clients[0].accounts[0].name, 4, "UAH");
+	//strcpy_s(bank.clients[0].accounts[0].number, 17, "1234567891234567");
+
+	//bank.clients[1].name = new char[] {"Oleg"};
+	//bank.clients[1].size = 1;
+	//bank.clients[1].id = ++idCount;
+	//bank.clients[1].accounts = new Account;
+	//strcpy_s(bank.clients[1].accounts[0].name, 4, "USD");
+	//strcpy_s(bank.clients[1].accounts[0].number, 17, "1234567891234567");
+	/////
+	//bank.menu();
 
 
 	/*Car car;
