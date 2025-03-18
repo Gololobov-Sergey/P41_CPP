@@ -9,8 +9,10 @@
 #include"Point.h"
 #include"Date.h"
 #include"Bank.h"
+#include"Library.h"
 
 using namespace std;
+
 
 
 
@@ -21,12 +23,29 @@ int main()
 	cout.setf(ios::boolalpha);
 	
 
+	/// 18.03.2025 //////
+
+
+	Library lib;
+	lib.load();
+	lib.print();
+	//lib.edit(1);
+	//lib.edit();
+	//lib.print();
+	//lib.save();
+	lib.add();
+	lib.save();
+
+	
+
+	
+
 
 	/// 15.03.2025 //////
 
 
-	int size = 0;
-	Point* p = nullptr;
+	//int size = 0;
+	//Point* p = nullptr;
 	/*for (size_t i = 0; i < size; i++)
 	{
 		p[i].name = 'A' + i;
@@ -42,14 +61,14 @@ int main()
 		out << p[i].name << " " << p[i].X << " " << p[i].Y << endl;
 	}*/
 
-	ifstream in("points.txt");
+	/*ifstream in("points.txt");
 	Point t;
 	int i = 0;
 	while(in >> t.name >> t.X >> t.Y)
 	{
 		addElemArray(p, size, t);
 		p[i++].print();
-	}
+	}*/
 
 
 	//int a[] = { 1,2,3,4,5 };
