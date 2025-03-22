@@ -26,7 +26,7 @@ void gotoxy(int x, int y)
 }
 
 
-void starLine(int count = 10, char symbol = '*')
+inline void starLine(int count = 10, char symbol = '*')
 {
 	for (size_t i = 0; i < count; i++)
 	{
@@ -154,6 +154,8 @@ T maxValueArray(T arr[], int size)
 }
 
 
+#define NOT_FOUND -1;
+
 template<class T>
 int lineSearch(T arr[], int size, T key)
 {
@@ -164,7 +166,7 @@ int lineSearch(T arr[], int size, T key)
 			return i;
 		}
 	}
-	return -1;
+	return NOT_FOUND;
 }
 
 
@@ -296,15 +298,7 @@ void privet()
 	cout << "Privet" << endl;
 }
 
-int lenStr(const char* str)
-{
-	int i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return i;
-}
+
 
 char* replaceSymbol(const char* str, char _old, char _new)
 {

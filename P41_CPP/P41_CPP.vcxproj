@@ -128,15 +128,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Human.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="string_func.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Date.h" />
+    <ClInclude Include="Human.h" />
     <ClInclude Include="Library.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="myFunc.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="string_func.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

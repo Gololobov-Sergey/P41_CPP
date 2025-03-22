@@ -1,4 +1,7 @@
 #pragma once
+#include<iostream>
+
+using namespace std;
 
 struct Date
 {
@@ -23,25 +26,3 @@ struct Date
 
 
 
-struct Human
-{
-	char* name;
-	Date birthDay;
-
-	void setName()
-	{
-		char buff[20];
-		cout << "Name: ";
-		cin.getline(buff, 20);
-
-		name = new char[strlen(buff) + 1];
-		strcpy_s(name, strlen(buff) + 1, buff);
-	}
-
-	void print()
-	{
-		cout << "Name : " << name << endl;
-		cout << "BD   : ";
-		birthDay.print();
-	}
-};

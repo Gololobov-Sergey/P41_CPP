@@ -11,9 +11,28 @@
 #include"Bank.h"
 #include"Library.h"
 
+#define SIZE 50 
+#define ЦИКЛ for(size_t i = 0; i < 10; i++)
+#define ПОЧАТОК {
+#define КІНЕЦЬ }
+#define ПРІНТ cout
+#define SQR(x) (x)*(x)
+
+#define PI 3.1415
+
+#define TEXT_ERROR "wlrk erkweporweor gk[pwoig p4oi5t[pweokrgpow4e gpow4k5[ek'rgk'ewr;kt[4p5ojktw4pop45t"
+
+#define TEST
+
 using namespace std;
 
 
+int sqr(int x)
+{
+	return x * x;
+}
+
+#include"string_func.h"
 
 
 int main()
@@ -22,19 +41,44 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 	
+#ifdef TEST
+	int arr[10];
+#else
+	int* arr = new int[10];
+#endif // TEST
+
+	setArray(arr, 10, 10, 100);
+	printArray(arr, 10);
+
+
+
+
+	/*int arr[SIZE];
+
+	ЦИКЛ
+	ПОЧАТОК
+		ПРІНТ << "mama" << endl;
+	КІНЕЦЬ
+
+	cout << SQR(PI) << endl;
+	cout << sqr(5+1) << endl;
+
+	cout << lenStr("mama") << endl;*/
+
+
 
 	/// 18.03.2025 //////
 
 
-	Library lib;
-	lib.load();
-	lib.print();
-	//lib.edit(1);
-	//lib.edit();
+	//Library lib;
+	//lib.load();
 	//lib.print();
+	////lib.edit(1);
+	////lib.edit();
+	////lib.print();
+	////lib.save();
+	//lib.add();
 	//lib.save();
-	lib.add();
-	lib.save();
 
 	
 
@@ -115,26 +159,28 @@ int main()
 
 
 
-	//Bank bank;
-	//////
-	//bank.size = 2;
-	//bank.clients = new Client[2];
-	//
-	//bank.clients[0].name = new char[] {"Anna"};
-	//bank.clients[0].size = 1;
-	//bank.clients[0].id = ++idCount;
-	//bank.clients[0].accounts = new Account;
-	//strcpy_s(bank.clients[0].accounts[0].name, 4, "UAH");
-	//strcpy_s(bank.clients[0].accounts[0].number, 17, "1234567891234567");
-
-	//bank.clients[1].name = new char[] {"Oleg"};
-	//bank.clients[1].size = 1;
-	//bank.clients[1].id = ++idCount;
-	//bank.clients[1].accounts = new Account;
-	//strcpy_s(bank.clients[1].accounts[0].name, 4, "USD");
-	//strcpy_s(bank.clients[1].accounts[0].number, 17, "1234567891234567");
-	/////
-	//bank.menu();
+//	Bank bank;
+//	////
+//#ifdef TEST
+//	bank.size = 2;
+//	bank.clients = new Client[2];
+//	
+//	bank.clients[0].name = new char[] {"Anna"};
+//	bank.clients[0].size = 1;
+//	bank.clients[0].id = ++idCount;
+//	bank.clients[0].accounts = new Account;
+//	strcpy_s(bank.clients[0].accounts[0].name, 4, "UAH");
+//	strcpy_s(bank.clients[0].accounts[0].number, 17, "1234567891234567");
+//
+//	bank.clients[1].name = new char[] {"Oleg"};
+//	bank.clients[1].size = 1;
+//	bank.clients[1].id = ++idCount;
+//	bank.clients[1].accounts = new Account;
+//	strcpy_s(bank.clients[1].accounts[0].name, 4, "USD");
+//	strcpy_s(bank.clients[1].accounts[0].number, 17, "1234567891234567");
+//#endif // TEST
+//
+//	bank.menu();
 
 
 	/*Car car;
